@@ -214,12 +214,12 @@ int main()
             ((delta_sec == next_sleep.tv_sec) && (delta_nsec < cooldown.tv_nsec)))
       #endif
       {
-        struct timespec target_time = 
+        struct timespec target_time =
         {
           last_check_time.tv_sec + next_sleep.tv_sec,
           last_check_time.tv_nsec + next_sleep.tv_nsec
         };
-        
+
         int ret = 1;
         while(ret != 0)
         {
@@ -275,7 +275,7 @@ int main()
       }
 
       // Set next_sleep to the worst case duration
-      // i.e. based on drive_speed, threshold and how much free space we 
+      // i.e. based on drive_speed, threshold and how much free space we
       //      currently have, sleep for the shortest time we could possibly
       //      fill the drive to the threshold
       {

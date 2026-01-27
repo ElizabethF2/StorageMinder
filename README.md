@@ -98,14 +98,14 @@ Description: The name that will be used for the Podman/Docker container used to 
 Flag: -g or --glibc
 Default: (Auto Detected)
 Description: Force the script to build the daemon for use in a system with glibc support. If this flag
-             is omitted, the script will detect if the device it's running on uses glibc or musl 
+             is omitted, the script will detect if the device it's running on uses glibc or musl
              automatically. See "Building without Podman, Docker or systemd" if building on a platform
              with neither.
 
 Flag: -m or --musl
 Default: (Auto Detected)
 Description: Force the script to build the daemon for use in a system with musl support. If this flag
-             is omitted, the script will detect if the device it's running on uses glibc or musl 
+             is omitted, the script will detect if the device it's running on uses glibc or musl
              automatically. See "Building without Podman, Docker or systemd" if building on a platform
              with neither.
 
@@ -132,7 +132,7 @@ Description: If specified, the daemon will be built with fanotify enabled. If om
 
 Flag: --image-name example.com/myregistry/archlinux
 Default: (Auto Detected)
-Description: The name of the image to use with Podman or Docker when building the daemon. By default, 
+Description: The name of the image to use with Podman or Docker when building the daemon. By default,
              the script uses "alpine" if musl is detected and "archlinux" if glibc is detected. Both
              images are pulled from Docker's registry. You can use this flag to force the script to use
              a different container registry or a different image. The name may be an unqualified name as

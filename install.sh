@@ -142,7 +142,7 @@ if [ ! -e "$DAEMON_INSTALL_PATH" ]; then
 
   # Ensure container exists
   $CCMD ps -a --format "Container Already Created: {{.Status}}" -f "name=$CONTAINER_NAME" | grep .
-  if [ "$?" != "0" ]; then 
+  if [ "$?" != "0" ]; then
     $CCMD container create -it -v "$(pwd):/ws:ro" --name $CONTAINER_NAME $CONTAINER_IMAGE /bin/sh
     echo Created a container named $CONTAINER_NAME via $CCMD
   fi
@@ -190,7 +190,7 @@ cat <<EOF > "$SERVICE_PATH"
 [Unit]
 Description=StorageMinder
 After=multi-user.target
-Wants=multi-user.target 
+Wants=multi-user.target
 AssertPathExists=$PATH_TO_CHECK
 AssertPathExists=$CLEANUP_SCRIPT_PATH
 StartLimitIntervalSec=200
