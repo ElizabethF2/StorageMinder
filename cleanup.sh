@@ -45,10 +45,11 @@ EOF
 
 # Create a toast to let active users know the cleanup script was triggered
 stop_early_if_enough_space_is_free
-for uid in $(ls /run/user/); do
-  sudo -u "#$uid" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus" \
-    notify-send -a StorageMinder "Cleanup Started" 2>/dev/null
-done
+# for uid in $(ls /run/user/); do
+#   sudo -u "#$uid" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus" \
+#     notify-send -a StorageMinder "Cleanup Started" 2>/dev/null
+# done
+echo "Cleanup Started"
 
 # Enumerate active users
 users="$(printf "%s\n%s\n%s\n%s" \
