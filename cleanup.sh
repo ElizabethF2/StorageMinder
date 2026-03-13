@@ -49,7 +49,7 @@ stop_early_if_enough_space_is_free
 #   sudo -u "#$uid" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus" \
 #     notify-send -a StorageMinder "Cleanup Started" 2>/dev/null
 # done
-echo "Cleanup Started"
+echo '>>> Cleanup Started! <<<'
 
 # Enumerate active users
 users="$(printf "%s\n%s\n%s\n%s" \
