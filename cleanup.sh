@@ -78,7 +78,7 @@ if type flatpak >/dev/null 2>/dev/null; then
 fi
 
 # Clear the thumbnail cache
-for u in users ; do
+for u in $users ; do
   rm -rf "$(eval echo "~$u/.cache/thumbnails")"
 done
 stop_early_if_enough_space_is_free
@@ -119,22 +119,22 @@ fi
 # stop_early_if_enough_space_is_free
 
 # Clear EncryptedNAS cache files older than 30 days
-# for u in users ; do
-#   find "$(eval echo "~$u/.cache/EncryptedNAS")" -mindepth 1 -mtime +30 -delete
-# done
-# stop_early_if_enough_space_is_free
+for u in $users ; do
+  find "$(eval echo "~$u/.cache/EncryptedNAS")" -mindepth 1 -mtime +30 -delete
+done
+stop_early_if_enough_space_is_free
 
 # Clear EncryptedNAS cache files older than 7 days
-# for u in users ; do
-#   find "$(eval echo "~$u/.cache/EncryptedNAS")" -mindepth 1 -mtime +7 -delete
-# done
-# stop_early_if_enough_space_is_free
+for u in $users ; do
+  find "$(eval echo "~$u/.cache/EncryptedNAS")" -mindepth 1 -mtime +7 -delete
+done
+stop_early_if_enough_space_is_free
 
 # Clear the entire EncryptedNAS cache
-# for u in users ; do
-#   rm -rf "$(eval echo "~$u/.cache/EncryptedNAS")"
-# done
-# stop_early_if_enough_space_is_free
+for u in $users ; do
+  rm -rf "$(eval echo "~$u/.cache/EncryptedNAS")"
+done
+stop_early_if_enough_space_is_free
 
 # Clear cache files older than 30 days (excludes rclone)
 # for u in users ; do
